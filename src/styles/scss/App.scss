@@ -1,0 +1,175 @@
+@import '../base/settings';
+@import '../base/base';
+@import './backdrop';
+@import './card';
+@import './header';
+@import './loader';
+@import './login';
+@import './modal';
+
+ .single-project, .single-task,.single-member{
+     background: hsla(0,0%,100%,.85);
+     
+}
+ .single-task{
+     padding-left: 5px;
+     padding-top: 10px;
+}
+.member-name{
+     text-align: center;
+     text-transform: capitalize;
+     font-weight: bold;
+     border:2px dashed lightgrey;
+     margin-top: 0;
+     color:$accent-color;
+}
+ .project-name{
+      text-transform: capitalize;
+}
+ 
+ .single-project:hover .delete-project,
+ .single-member:hover .delete-member,
+ .single-task:hover .delete-task
+ {
+     visibility: visible;
+}
+ 
+ .delete-task, .delete-member, .delete-project{
+     position: absolute;
+     top:0;
+     right: 1%;
+     color: $light-primary-color;
+     visibility: hidden;
+     transition: all 0.5s ease-out;
+     cursor: pointer;
+}
+ 
+ .task-list{
+     width:100%;
+}
+.member-list {
+     background: inherit;
+}
+ .single-task-description{
+     display: flex;
+     justify-content: space-evenly;
+     width: 100%;
+}
+ 
+ .single-project, .single-task, .single-member {
+     margin: $margin10;
+     position: relative;
+     -webkit-box-shadow: 5px 5px 12px 0px $color-lightgray;
+     box-shadow: 5px 5px 12px 0px $color-lightgray;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+ 
+ .project-list, .member-list{
+    margin-top:  $margin20*5;
+ }
+ .card{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;     
+     background: hsla(0,0%,100%,.85);
+     opacity:0.5;
+     z-index: 2;
+     border: none;
+     box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+     border-radius: 5px;
+     margin: 20px auto 20px auto;     
+     align-self: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.2rem;
+     -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+
+
+@-webkit-keyframes pulse {to {box-shadow: 0 0 0 10px rgba(232, 76, 61, 0);}}
+@-moz-keyframes pulse {to {box-shadow: 0 0 0 10px rgba(232, 76, 61, 0);}}
+@-ms-keyframes pulse {to {box-shadow: 0 0 0 10px rgba(232, 76, 61, 0);}}
+@keyframes pulse {to {box-shadow: 0 0 0 10px rgba(232, 76, 61, 0);}}
+
+ .card:hover{
+     border: 2px solid $primary-color;
+     opacity: 1;
+     cursor: pointer;
+     -webkit-animation: none;-moz-animation: none;-ms-animation: none;animation: none;    
+}
+ .animate-enter {
+     opacity: 0;
+     transform: translate(-250px,0);
+     transform: translate3d(-250px,0,0);
+}
+ .animate-enter.animate-enter-active {
+     opacity: 1;
+     transition: opacity 1s ease;
+     transform: translate(0,0);
+     transform: translate3d(0,0,0);
+     transition-property: transform, opacity;
+     transition-duration: 300ms;
+     transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
+}
+ .animate-leave {
+     opacity: 1;
+     transform: translate(0,0,0);
+     transform: translate3d(0,0,0);
+     transition-property: transform, opacity;
+     transition-duration: 300ms;
+     transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
+}
+ .animate-leave.animate-leave-active {
+     opacity: 0;
+     transform: translate(250px,0);
+     transform: translate3d(250px,0,0);
+}
+ .animate-appear {
+     opacity: 0.01;
+}
+ .animate-appear.animate-appear-active {
+     opacity: 1;
+     transition: opacity .5s ease-in;
+}
+.app{
+    height: 100%;
+    
+}
+
+ @media screen and (max-width: 500px) {
+     
+     .project-list, .member-list, .task-list {
+         display: flex;
+         flex-wrap: wrap;
+         flex-direction: column;
+    }
+     .single-project, .single-member, .single-task {
+         width: calc(100% - #{$margin20})
+    }
+    .header__title h1{
+        font-size:1.4rem;
+    }
+    
+}
+
+ @media screen and (min-width: 700px) {
+     
+     .member-list, .project-list {
+         display: flex;
+         flex-wrap: wrap;
+         flex-direction: row;
+    }
+     .single-project, .single-member {
+         width: calc(33.33% - #{$margin20})
+    }
+}
+ 

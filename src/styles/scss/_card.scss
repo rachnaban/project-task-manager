@@ -1,0 +1,50 @@
+.card .fa-plus-circle{
+  color:$primary-color;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.85);
+  opacity: 0.5;
+  z-index: 2;
+  border: none;
+  box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+  border-radius: 5px;
+  margin: 20px auto 20px auto;
+  align-self: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 12px;
+  -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1); }
+
+@-webkit-keyframes pulse {
+  to {
+    box-shadow: 0 0 0 10px rgba(232, 76, 61, 0); } }
+
+@-moz-keyframes pulse {
+  to {
+    box-shadow: 0 0 0 10px rgba(232, 76, 61, 0); } }
+
+@-ms-keyframes pulse {
+  to {
+    box-shadow: 0 0 0 10px rgba(232, 76, 61, 0); } }
+
+@keyframes pulse {
+  to {
+    box-shadow: 0 0 0 10px rgba(232, 76, 61, 0); } }
+
+.card:hover {
+  border: 2px solid $primary-color;
+  opacity: 1;
+  cursor: pointer;
+  -webkit-animation: none;
+  -moz-animation: none;
+  -ms-animation: none;
+  animation: none; }
