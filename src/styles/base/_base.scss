@@ -51,7 +51,7 @@ button, html input[type=button], input[type=reset], input[type=submit] {
      width:100%;
 }
  button {
-     background: #1c88bf;
+     background: $accent-color;
      border: none;
      color: white;
      display: inline-block;
@@ -62,8 +62,12 @@ button, html input[type=button], input[type=reset], input[type=submit] {
      text-decoration: none;
 }
 button:hover{
-    background: linear-gradient(#1c88bf,#303F9F);
+    background:rgba(0,0,0,0.4);
 }
+.button--link:hover{
+    background:rgba(0,0,0,0.1);
+}
+
  select{
      color:white;
      border-radius: $margin20;
